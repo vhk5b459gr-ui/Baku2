@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Баку — город ветров и огней</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Manrope:wght@400;600&display=swap">
+<style>
+:root{--bg:#f3efe6;--ink:#10243a;--muted:#4b5d70;--card:#fffaf0;--line:#d9cfba;--flame:#e2561f;--sea:#0f5b78;--hero1:#bfe0ec;--hero2:#f3efe6;--tw:#10243a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08141f;--ink:#eaf1f5;--muted:#9fb3c2;--card:#0f2233;--line:#1d3a52;--flame:#ff7a3d;--sea:#5cc0e0;--hero1:#0d3550;--hero2:#08141f;--tw:#050d15}}
+:root[data-theme="dark"]{--bg:#08141f;--ink:#eaf1f5;--muted:#9fb3c2;--card:#0f2233;--line:#1d3a52;--flame:#ff7a3d;--sea:#5cc0e0;--hero1:#0d3550;--hero2:#08141f;--tw:#050d15}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif}
+.hero{background:linear-gradient(var(--hero1),var(--hero2));padding:56px 20px 0;text-align:center;overflow:hidden}
+h1{font:700 clamp(44px,12vw,92px)/1 Cormorant,Georgia,serif;margin:0 0 12px;letter-spacing:.01em}
+.hero p{max-width:34ch;margin:0 auto;color:var(--muted)}
+.sky{display:block;width:100%;max-width:760px;margin:28px auto 0;height:auto}
+main{max-width:720px;margin:0 auto;padding:40px 20px 60px}
+h2{font:700 32px/1.15 Cormorant,Georgia,serif;margin:0 0 16px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:16px}
+.tabs button{flex:none;font:600 15px Manrope,sans-serif;color:var(--ink);background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--flame);border-color:var(--flame);color:#fff}
+.tabs button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--flame);border-radius:6px;padding:22px}
+.panel h3{font:700 26px/1.2 Cormorant,Georgia,serif;margin:0 0 8px}
+.panel p{margin:0 0 10px}
+.panel .fact{color:var(--sea);font-weight:600;margin:0}
+section{margin-top:48px}
+.facts{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.facts div{border-top:3px solid var(--sea);padding-top:10px}
+.facts b{display:block;font:700 22px Cormorant,Georgia,serif}
+.facts span{color:var(--muted);font-size:15px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
+</style>
+</head>
+<body>
+<header class="hero">
+<h1>Баку</h1>
+<p>Город ветров на берегу Каспия, где древние стены стоят рядом с башнями-«пламенем».</p>
+<svg class="sky" viewBox="0 0 760 220" role="img" aria-label="Три башни Flame Towers на фоне заката">
+<defs><linearGradient id="f" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e2561f"/><stop offset="1" stop-color="#ffc247"/></linearGradient></defs>
+<path d="M300 220 C300 150 330 70 360 14 C378 70 410 150 410 220Z" fill="var(--tw)"/>
+<path d="M360 220 C360 160 390 90 430 40 C440 90 470 160 470 220Z" fill="var(--tw)" opacity=".92"/>
+<path d="M250 220 C250 170 275 110 300 70 C318 110 345 170 345 220Z" fill="var(--tw)" opacity=".92"/>
+<path d="M330 220 C332 150 350 90 362 50 C372 90 384 150 386 220Z" fill="url(#f)" opacity=".85"/>
+<path d="M395 220 C398 170 415 110 430 78 C440 110 452 170 455 220Z" fill="url(#f)" opacity=".7"/>
+<path d="M0 205 Q190 190 380 205 T760 205 V220 H0Z" fill="var(--sea)" opacity=".55"/>
+</svg>
+</header>
+<main>
+<h2>Что посмотреть</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+<section>
+<h2>Баку в нескольких фактах</h2>
+<div class="facts">
+<div><b>Столица Азербайджана</b><span>Крупнейший город страны на Апшеронском полуострове.</span></div>
+<div><b>Город ветров</b><span>Название пошло от сильных ветров, которые часто дуют с Каспия.</span></div>
+<div><b>Ичери-шехер</b><span>Старый город входит в список ЮНЕСКО с 2000 года.</span></div>
+<div><b>Каспийское море</b><span>Самое большое озеро на Земле, а в Баку у него набережная.</span></div>
+</div>
+</section>
+</main>
+<footer>Мой первый сайт. Сделано вместе с Claude.</footer>
+<script>
+var places=[
+{n:"Flame Towers",t:"Три башни-«языка пламени»",p:"Три небоскрёба на холме, которые видно почти из любой точки города. Вечером их фасады превращаются в огромные экраны с огнём и флагом.",f:"Построены в 2012 году."},
+{n:"Ичери-шехер",t:"Старый город",p:"Крепостные стены, узкие улочки, мечети и караван-сараи из светлого известняка. Здесь легко представить, как жил Баку много веков назад.",f:"Под защитой ЮНЕСКО."},
+{n:"Девичья башня",t:"Символ Баку",p:"Загадочная каменная башня XII века внутри Старого города. Историки до сих пор спорят, для чего её построили.",f:"С вершины видно бухту и крыши города."},
+{n:"Приморский бульвар",t:"Прогулка у Каспия",p:"Длинная набережная с парками, фонтанами и кафе. Лучшее время для прогулки: закат, когда небо над водой становится розово-оранжевым.",f:"Любимое место для вечерних прогулок."},
+{n:"Центр Гейдара Алиева",t:"Здание без острых углов",p:"Белоснежные волнообразные формы, которые кажутся одной непрерывной линией. Спроектировала архитектор Заха Хадид.",f:"Открыт в 2012 году."},
+{n:"Янардаг",t:"Горящая гора",p:"На склоне недалеко от города из земли выходит природный газ, и пламя горит постоянно. Особенно красиво это выглядит в темноте.",f:"Название переводится как «горящая гора»."}
+];
+var tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+function show(i){
+Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i?"true":"false")});
+var d=places[i];
+panel.innerHTML="";
+[["h3",d.t],["p",d.p],["p",d.f,"fact"]].forEach(function(x){var e=document.createElement(x[0]);e.textContent=x[1];if(x[2])e.className=x[2];panel.appendChild(e)});
+}
+places.forEach(function(d,i){var b=document.createElement("button");b.textContent=d.n;b.setAttribute("role","tab");b.onclick=function(){show(i)};tabs.appendChild(b)});
+show(0);
+</script>
+</body>
+</html>
